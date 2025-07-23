@@ -11,16 +11,16 @@ export const CarouselTrack = styled.div`
   display: flex;
   height: 100%;
   transition: transform 0.5s ease-in-out;
-  transform: translateX(-${props => props.current * 100}%);
+  transform: translateX(-${props => props.$current * 100}%);
 `;
 
 export const Slide = styled.div`
   flex: 0 0 100%;
   height: 100%;
-  background-image: url(${props => props.background});
+  background-image: url(${props => props.$background});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:70% 0%;
+  background-position: 70% 0%;
   position: relative;
 `;
 
@@ -129,12 +129,10 @@ export const DotsContainer = styled.div`
 
 export const Dot = styled.button`
   height: 0.75rem;
-  width: ${props => (props.active ? '1.5rem' : '0.75rem')};
-  /* border-radius igual a metade da altura dá o efeito pílula */
+  width: ${props => (props.$active ? '1.5rem' : '0.75rem')};
   border-radius: 0.375rem;
   border: none;
-  background: ${props =>
-    props.active ? '#FACC15' : 'rgba(255,255,255,0.6)'};
+  background: ${props => (props.$active ? '#FACC15' : 'rgba(255,255,255,0.6)')};
   cursor: pointer;
   transition: width 0.3s ease, background 0.3s ease;
 

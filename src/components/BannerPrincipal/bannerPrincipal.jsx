@@ -19,7 +19,7 @@ import {
 
 const slides = [
   {
-    background: '/imagens/backgrounHome.png',        // note o “/” no início
+    background: 'public/assets/imagens/backgrounHome.png',
     smallText: 'Serviços Digitais',
     heading: 'Antecipamos até',
     highlight: '36 meses da sua economia.',
@@ -30,7 +30,7 @@ const slides = [
     secondaryHref: '#'
   },
   {
-    background: '/imagens/background2.png',
+    background: '/public/assets/imagens/background2.png',
     smallText: 'Mais Economia',
     heading: 'Obtenha descontos',
     highlight: 'na sua conta de energia',
@@ -41,7 +41,7 @@ const slides = [
     secondaryHref: '#'
   },
   {
-    background: '/imagens/background3.png',
+    background: '/public/assets/imagens/background3.png',
     smallText: 'Crédito Facilitado',
     heading: 'Receba parte da sua economia futura',
     highlight: 'sem esperar o ciclo completo',
@@ -52,7 +52,7 @@ const slides = [
     secondaryHref: '#'
   },
   {
-    background: '/imagens/background4.png',
+    background: '/assets/imagens/background4.png',
     smallText: 'Prêmio pela Portabilidade',
     heading: 'Ao optar por uma comercializadora parceira,',
     highlight: 'você recebe um bônus financeiro direto.',
@@ -68,20 +68,18 @@ export default function BannerPrincipal() {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
-  // Cria uma versão estável de nextSlide para o hook
   const nextSlide = useCallback(
     () => setCurrent(c => (c === length - 1 ? 0 : c + 1)),
     [length]
   );
 
-  // dispara o autoplay a cada 5s (pode passar outro valor)
   useCarouselAutoPlay(nextSlide, length, 5000);
 
   return (
     <CarouselContainer>
-      <CarouselTrack current={current}>
+      <CarouselTrack $current={current}>
         {slides.map((slide, idx) => (
-          <Slide key={idx} background={slide.background}>
+          <Slide key={idx} $background={slide.background}>
             <Overlay />
             <Content>
               <SmallText>{slide.smallText}</SmallText>
@@ -107,7 +105,7 @@ export default function BannerPrincipal() {
         {slides.map((_, idx) => (
           <Dot
             key={idx}
-            active={idx === current}
+            $active={idx === current}
             onClick={() => setCurrent(idx)}
             aria-label={`Slide ${idx + 1}`}
           />

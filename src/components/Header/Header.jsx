@@ -12,7 +12,7 @@ import {
   MobileMenu
 } from './Header.styles';
 
-import logoImg from '../../../imagens/Billi_logo.png';
+import logoImg from '../../../public/assets/imagens/Billi_logo.png';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

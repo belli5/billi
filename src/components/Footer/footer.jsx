@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   FooterWrapper,
   Top,
@@ -12,7 +11,7 @@ import {
 } from './footer.styles';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
-import logoImg from '../../../imagens/Billi_logo.png';
+import logoImg from '../../../public/assets/imagens/Billi_logo.png';
 
 export default function Footer() {
   return (
