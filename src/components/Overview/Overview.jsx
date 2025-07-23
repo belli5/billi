@@ -14,8 +14,8 @@ import {
 } from './Overview.styles';
 
 // se você guardou o mapa de pontos em src/assets/mapBrazil.png
-import mapBrazil from './imagens/Brazil.png';
-import rectangle from './imagens/Frame 1127463987.png'
+import mapBrazil from '../../../public/assets/imagens/Brazil.png';
+import rectangle from '../../../public/assets/imagens/Frame 1127463987.png'
 
 export default function Overview() {
   const financeProducts = [
