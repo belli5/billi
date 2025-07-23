@@ -11,7 +11,7 @@ import {
   StepTitle,
   CTAButton,
   StepText
-} from './HowItWorks.Styles';
+} from './HowWorks.styles';
 
 const steps = [
   {
