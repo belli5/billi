@@ -10,7 +10,7 @@ export const Section = styled.section`
       rgba(0,0,0,0.8) 50%,
       rgba(0,0,0,0) 100%
     ),
-    url('src/pages/comercializadores/component/imagem/ca17d813bcf8dc3001a050b465d79da623738656.png');
+    url('/assets/imagens/ca17d813bcf8dc3001a050b465d79da623738656.png');
   background-size: cover;
   background-position: center;
   color: #fff;

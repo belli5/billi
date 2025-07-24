@@ -3,7 +3,7 @@ import { FiArrowRight } from 'react-icons/fi';
 
 export const Section = styled.section`
   position: relative;
-  background: url('public/assets/imagens/7e75399b857c0bebd09d4a57bf949eb6f8f5fbc2.png');
+  background: url('assets/imagens/7e75399b857c0bebd09d4a57bf949eb6f8f5fbc2.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 70% 5%;

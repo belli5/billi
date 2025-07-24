@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { Wrapper } from './FloatingWhatsApp.styles';
 
 // Link no formato wa.me/55<DDD><número>
-const WHATSAPP_LINK = 'https://wa.me/5511999999999';
+const WHATSAPP_LINK = 'https://wa.me/5511914958391';
 
 export default function FloatingWhatsApp() {
   return (

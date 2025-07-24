@@ -53,7 +53,12 @@ export const Question = styled.button`
   cursor: pointer;
 
   &:focus { outline: none; }
-`;
+/* faz o span crescer para empurrar o ícone para a direita */
+  & > span {
+    flex: 1;
+    text-align: left;
+  }
+ `;
 
 export const Answer = styled.div`
   font-family: 'Montserrat', sans-serif;

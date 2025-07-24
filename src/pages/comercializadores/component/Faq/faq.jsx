@@ -107,12 +107,10 @@ export default function FAQ() {
             {faqs.map((item, idx) => (
               <Item key={idx}>
                 <Question onClick={() => toggle(idx)}>
-                  {item.question}
-                  {openStates[idx] ? (
-                    <ChevronUp size={20} />
-                  ) : (
-                    <ChevronDown size={20} />
-                  )}
+                <span>{item.question}</span>
+                {openStates[idx] 
+                    ? <ChevronUp size={20}/> 
+                    : <ChevronDown size={20}/>}
                 </Question>
                 <Answer isOpen={openStates[idx]}>
                   {item.answer.split('\n').map((line, i) => (

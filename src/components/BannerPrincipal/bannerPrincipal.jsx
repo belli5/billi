@@ -19,7 +19,7 @@ import {
 
 const slides = [
   {
-    background: 'public/assets/imagens/backgrounHome.png',
+    background: '/assets/imagens/backgrounHome.png',
     smallText: 'Serviços Digitais',
     heading: 'Antecipamos até',
     highlight: '36 meses da sua economia.',
@@ -30,7 +30,7 @@ const slides = [
     secondaryHref: '#'
   },
   {
-    background: '/public/assets/imagens/background2.png',
+    background: '/assets/imagens/background2.png',
     smallText: 'Mais Economia',
     heading: 'Obtenha descontos',
     highlight: 'na sua conta de energia',
@@ -41,7 +41,7 @@ const slides = [
     secondaryHref: '#'
   },
   {
-    background: '/public/assets/imagens/background3.png',
+    background: '/assets/imagens/background3.png',
     smallText: 'Crédito Facilitado',
     heading: 'Receba parte da sua economia futura',
     highlight: 'sem esperar o ciclo completo',
