@@ -1,6 +1,6 @@
 // src/components/Header/Header.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink as RouterNavLink, useLocation } from 'react-router-dom';
 import {
   Wrapper,
   Container,
@@ -25,11 +25,11 @@ export default function Header() {
 
         {/* Navegação desktop */}
         <Nav>
-          <NavLink as={Link} to="/sobre">Sobre</NavLink>
-          <NavLink as={Link} to="/">Para empresas</NavLink>
-          <NavLink as={Link} to="/Comercializadores">Para comercializadores</NavLink>
-          <NavLink href="#como-funciona">Como funciona</NavLink>
-          <NavLink href="#produtos">Produtos</NavLink>
+          <NavLink to="/sobre">Sobre</NavLink>
+          <NavLink to="/">Para empresas</NavLink>
+          <NavLink to="/comercializadores">Para comercializadores</NavLink>
+          <NavLink to="/#como-funciona">Como funciona</NavLink>
+          <NavLink to="/#produtos">Produtos</NavLink>
         </Nav>
 
         {/* CTA desktop */}
@@ -51,9 +51,9 @@ export default function Header() {
 
       {/* Menu mobile toggled */}
       <MobileMenu isOpen={isOpen}>
-        <NavLink href="#sobre" onClick={() => setIsOpen(false)}>Sobre</NavLink>
-        <NavLink href="#para-empresas" onClick={() => setIsOpen(false)}>Para empresas</NavLink>
-        <NavLink href="#para-comercializadores" onClick={() => setIsOpen(false)}>Para comercializadores</NavLink>
+        <NavLink href="/sobre" onClick={() => setIsOpen(false)}>Sobre</NavLink>
+        <NavLink href="/" onClick={() => setIsOpen(false)}>Para empresas</NavLink>
+        <NavLink href="/Comercializadores" onClick={() => setIsOpen(false)}>Para comercializadores</NavLink>
         <NavLink href="#como-funciona" onClick={() => setIsOpen(false)}>Como funciona</NavLink>
         <NavLink href="#produtos" onClick={() => setIsOpen(false)}>Produtos</NavLink>
         <DesktopCTA href="#seja-parceiro" onClick={() => setIsOpen(false)}>Seja um parceiro</DesktopCTA>

@@ -46,12 +46,12 @@ export const FeatureTitle = styled.h3`
   font-size: 1.125rem;
   font-weight: 600;
   margin: 0;
-  color: #111;
+  color: #1F1F1F;
 `;
 
 export const FeatureDesc = styled.p`
   font-size: 0.9rem;
   line-height: 1.5;
-  color: #555;
+  color: #1F1F1F;
   margin: 0;
 `;

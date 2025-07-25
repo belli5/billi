@@ -1,5 +1,6 @@
 // src/components/Header/Header.styles.js
 import styled from 'styled-components';
+import { NavLink as RouterNavLink } from 'react-router-dom';
 
 export const Wrapper = styled.header`
   position: fixed;   /* ou: fixed */
@@ -34,11 +35,18 @@ export const Nav = styled.nav`
   }
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled(RouterNavLink)`
   
   font-size: 1rem;
   color: #000000;
   text-decoration: none;
+
+  /* estilo padrão de ativo – usa a classe “active” que o NavLink injeta */
+  &.active {
+    color: #B38F00;
+   font-weight: 400;
+  }
+
   &:hover { color: #B38F00; }
 `;
 
