@@ -82,7 +82,7 @@ const faqs = [
 
 export default function FAQ() {
   // 1) Criamos um array de estados, um booleano para cada item, todos true inicialmente
-  const [openStates, setOpenStates] = useState(() => faqs.map(() => true));
+  const [openStates, setOpenStates] = useState(() => faqs.map(() => false));
 
   // 2) Toggle individual
   const toggle = (idx) => {

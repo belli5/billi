@@ -86,7 +86,7 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [openStates, setOpenStates] = useState(() => faqs.map(() => true));
+  const [openStates, setOpenStates] = useState(() => faqs.map(() => false));
 
   const toggle = idx => {
     setOpenStates(prev => {

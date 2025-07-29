@@ -1,5 +1,5 @@
 // src/components/Header/Header.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink as RouterNavLink, useLocation } from 'react-router-dom';
 import {
   Wrapper,
@@ -15,7 +15,13 @@ import {
 import logoImg from '../../../public/assets/imagens/Billi_logo.png';
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+ const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  // fecha o menu sempre que a rota mudar
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   return (
     <Wrapper>
@@ -25,8 +31,9 @@ export default function Header() {
 
         {/* Navegação desktop */}
         <Nav>
+          <NavLink to="/">Início</NavLink>
           <NavLink to="/sobre">Sobre</NavLink>
-          <NavLink to="/">Para empresas</NavLink>
+          <NavLink to="/ParaEmpresas">Para empresas</NavLink>
           <NavLink to="/comercializadores">Para comercializadores</NavLink>
           <NavLink to="/#como-funciona">Como funciona</NavLink>
           <NavLink to="/#produtos">Produtos</NavLink>
@@ -51,12 +58,12 @@ export default function Header() {
 
       {/* Menu mobile toggled */}
       <MobileMenu isOpen={isOpen}>
-        <NavLink href="/sobre" onClick={() => setIsOpen(false)}>Sobre</NavLink>
-        <NavLink href="/" onClick={() => setIsOpen(false)}>Para empresas</NavLink>
-        <NavLink href="/Comercializadores" onClick={() => setIsOpen(false)}>Para comercializadores</NavLink>
-        <NavLink href="#como-funciona" onClick={() => setIsOpen(false)}>Como funciona</NavLink>
-        <NavLink href="#produtos" onClick={() => setIsOpen(false)}>Produtos</NavLink>
-        <DesktopCTA href="#seja-parceiro" onClick={() => setIsOpen(false)}>Seja um parceiro</DesktopCTA>
+        <NavLink to="/"       onClick={() => setIsOpen(false)}>Início</NavLink>
+        <NavLink to="/sobre"  onClick={() => setIsOpen(false)}>Sobre</NavLink>
+        <NavLink to="/ParaEmpresas"       onClick={() => setIsOpen(false)}>Para Empresas</NavLink>
+        <NavLink to="/comercializadores" onClick={() => setIsOpen(false)}>Para comercializadores</NavLink>
+        <NavLink to="/#produtos"         onClick={() => setIsOpen(false)}>Produtos</NavLink>
+        <DesktopCTA to="#seja-parceiro"  onClick={() => setIsOpen(false)}>Seja um parceiro</DesktopCTA>
       </MobileMenu>
     </Wrapper>
   );

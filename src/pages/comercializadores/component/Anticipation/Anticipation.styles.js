@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   width: 100%;
-  /* gradiente + imagem de fundo */
   background-image:
     linear-gradient(
       to right,
@@ -67,11 +66,12 @@ export const Right = styled.form`
     color: #fff;
   }
 
+  /* estilos base para todos os inputs e selects */
   input,
   select {
     width: 100%;
-    height: 40px;                        /* campo mais compacto */                  /* menos padding lateral */
-    background: rgba(255,255,255,0.1);   /* leve transparência */
+    height: 40px;
+    background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.4);
     border-radius: 6px;
     color: #fff;
@@ -84,19 +84,25 @@ export const Right = styled.form`
 
     &:focus {
       outline: none;
-      border-color: #FACC15;             /* foco amarelo */
+      border-color: #FACC15;
     }
+  }
+
+  /* quando existir valor, troca a borda para amarelo */
+  input[data-filled="true"],
+  select[data-filled="true"] {
+    border-color: #FACC15;
   }
 
   .row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 1.5rem;  /* espaço maior entre as colunas */
-    row-gap:    1.25rem; /* espaço maior entre as linhas (quando empilhar) */
+    column-gap: 1.5rem;
+    row-gap: 1.25rem;
 
     @media (max-width: 480px) {
       grid-template-columns: 1fr;
-      row-gap: 1rem;       /* mantém um gap confortável na versão mobile */
+      row-gap: 1rem;
     }
   }
 

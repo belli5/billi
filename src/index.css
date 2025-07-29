@@ -8,4 +8,5 @@ html, body {
   width: 100%;
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
 }

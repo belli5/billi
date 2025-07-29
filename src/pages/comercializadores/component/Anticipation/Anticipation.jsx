@@ -1,4 +1,5 @@
-import React from 'react';
+// src/components/Anticipation/Anticipation.jsx
+import React, { useState } from 'react';
 import {
   Section,
   Container,
@@ -7,6 +8,22 @@ import {
 } from './Anticipation.styles';
 
 export default function Anticipation() {
+  const [form, setForm] = useState({
+    comercializadora: '',
+    nome: '',
+    email: '',
+    phone: '',
+    website: '',
+    cnpj: '',
+    carteira: '',
+    integracao: ''
+  });
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setForm(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
     <Section>
       <Container>
@@ -32,7 +49,12 @@ export default function Anticipation() {
           <div className="row">
             <div>
               <label>Comercializadora</label>
-              <select defaultValue="">
+              <select
+                name="comercializadora"
+                value={form.comercializadora}
+                onChange={handleChange}
+                data-filled={!!form.comercializadora}
+              >
                 <option value="" disabled>Selecione</option>
                 <option>Equatorial Nordeste S/A</option>
                 <option>Outra</option>
@@ -40,40 +62,87 @@ export default function Anticipation() {
             </div>
             <div>
               <label>Nome</label>
-              <input type="text" placeholder="Seu nome" />
+              <input
+                name="nome"
+                type="text"
+                placeholder="Seu nome"
+                value={form.nome}
+                onChange={handleChange}
+                data-filled={!!form.nome}
+              />
             </div>
           </div>
 
           <div className="row">
             <div>
               <label>E-mail</label>
-              <input type="email" placeholder="seu@exemplo.com" />
+              <input
+                name="email"
+                type="email"
+                placeholder="seu@exemplo.com"
+                value={form.email}
+                onChange={handleChange}
+                data-filled={!!form.email}
+              />
             </div>
             <div>
               <label>Celular / Whatsapp</label>
-              <input type="tel" placeholder="DDD + número" />
+              <input
+                name="phone"
+                type="tel"
+                placeholder="DDD + número"
+                value={form.phone}
+                onChange={handleChange}
+                data-filled={!!form.phone}
+              />
             </div>
           </div>
 
           <div className="row">
             <div>
               <label>Website</label>
-              <input type="text" placeholder="site.com.br" />
+              <input
+                name="website"
+                type="text"
+                placeholder="site.com.br"
+                value={form.website}
+                onChange={handleChange}
+                data-filled={!!form.website}
+              />
             </div>
             <div>
-              <label>Cargo na comercializadora</label>
-              <input type="text" placeholder="CEO, Gerente…" />
+              <label>CNPJ</label>
+              <input
+                name="cnpj"
+                type="text"
+                placeholder="00.000.000/0000-00"
+                value={form.cnpj}
+                onChange={handleChange}
+                data-filled={!!form.cnpj}
+              />
             </div>
           </div>
 
           <div className="row">
             <div>
               <label>Tamanho da carteira</label>
-              <input type="number" placeholder="número" />
+              <input
+                name="carteira"
+                type="number"
+                placeholder="número"
+                value={form.carteira}
+                onChange={handleChange}
+                data-filled={!!form.carteira}
+              />
             </div>
             <div>
               <label>Integração ERP/Gestão?</label>
-              <select defaultValue="">
+              <select
+                name="integracao"
+                value={form.integracao}
+                onChange={handleChange}
+                data-filled={!!form.integracao}
+              >
                 <option value="" disabled>Selecione</option>
                 <option>Sim</option>
                 <option>Não</option>
